@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code Maze!</title>
+	<link rel="stylesheet" type="text/css" href="maze_style.css">
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"
+	></script>
+
+	<style>
+
+		/* http://meyerweb.com/eric/tools/css/reset/ 
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+
+		html, div, span, applet, object, iframe,
+		h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+			text-align: center;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+			width: 100%;
+		}
+		#board {
+			background-image: url("http://images.summitpost.org/original/255539.jpg");
+			background-size: cover;
+			flex: 7;
+			border: 2px solid #EAE1FF;
+			border-radius: 5px;
+		}
+		#yourprocess {
+			flex: 3;
+			color: #EAE1FF;
+			font-size: 18px;
+			font-family : Arial;
+			font-weight: bold;
+			border: 4px dashed black;
+			margin-left: 6px;
+			margin-right: 6px;
+			padding: 4px;
+		}
+		#flex {
+			display: flex;
+		}
+		#bottom {
+			text-align: left;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		input, #question, #potentialAnswer {
+			height: 2vh;
+			font-family : Arial;
+			font-weight: bold;
+			color: #EAE1FF;
+			margin-top: 4px;
+			margin-bottom: 4px;
+			margin-left: auto;
+			margin-right: auto;
+			border: 2px solid black;
+			border-radius: 5px;
+			padding: 4px;
+		}
+
+		.cell {
+			background-size: cover;
+		}
+
+		h2 {
+			font-size: 28px;
+			margin-bottom: 10px;
+			margin-top: 6px;
+			text-decoration: underline;
+		}
+
+		#logout {
+			color: black;
+			height: 36px;
+			font-size: 24px;
+			position:absolute;
+     		top:0;
+     		right:0;
+     		margin-right: 30px;
+     		margin-top: 30px;
+     		background: linear-gradient(to bottom, #EAE1FF, #D7C1E8);
+		}
+
+		#logout:hover{ 
+			background: linear-gradient(to bottom, #E94AFF, #7E3DFF);
+		}
+	</style>
+</head>
+<body onresize="onResize()">
+
+	<h1 id ="title">EXPRESS MAZE</h1>
+	<input type="button" id="logout" value="Logout">
+
+	<div id="flex">
+		<div id="board"></div>
+		<div id="yourprocess">
+			<h2>Command List</h2>
+			<h3 id="correctSteps"></h3>
+		</div>
+	</div>
+	<div id="bottom">
+		<div id="question">What's the next terminal command to setup node.js and Express?</div>
+		<div id="potentialAnswer">Hover over the arrows for a hint.</div>
+		<input id="answer" type="text" name="answer" placeholder="Type Next Step Here">
+	</div>
+
+	<script src="./functions.js"></script>
+
+</body>
+</html>

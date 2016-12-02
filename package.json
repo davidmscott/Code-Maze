@@ -1,0 +1,23 @@
+{
+  "name": "code-maze",
+  "version": "1.0.0",
+  "description": "Code Learning Modules",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "mongoose": "^4.5.8",
+    "promise": "^7.1.1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "devDependencies": {}
+}

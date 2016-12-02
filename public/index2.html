@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Revise index html</title>
+
+			<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+
+</head>
+<body>
+
+<div class="jumbotron">
+	  <h1>Learn Backend Web Dev</h1> 
+	  <h2>Log In or Register to Play</h2> 
+</div>
+<div class = "container">
+
+
+			<div id = "logInHere">
+
+				<div class="row">
+					 <div class="col-sm-6"><input type="text" id="username" placeholder="Username"></div>
+					 <div class="col-sm-6"><input type="button" id="submit" value="login    "></div>
+				</div>
+
+				<div class="row">
+					 <div class="col-sm-6"><input type="password" id="password" placeholder = "Password"></div>
+					 <div class="col-sm-6"><input type="button" id="register" value="register"></div>
+				</div>
+			</div>
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+<script>
+		function tryToLogin() {
+			$.post('/api/login',
+			{
+				username: $('#username').val(),
+				password: $('#password').val()
+			}, function(data) {
+				if (data === "success"){
+					document.location = "./mazeChoice.html";
+				} else {
+					$('#error').html("Username or Password incorrect.");
+				}
+			});
+		}
+
+		function tryToRegister() {
+			$.post('/api/register',
+			{
+				username: $('#username').val(),
+				password: $('#password').val()
+			}, function(data) {
+				if (data === "success"){
+					document.location = "./mazeChoice.html";
+				} else {
+					$('#error').html("Please enter a user name and password");
+				}
+			});
+		}
+
+		$(document).ready(function() {
+			$('#submit').click(tryToLogin);
+			$('#register').click(tryToRegister);
+		});
+	</script>
+
+
+</body>
+</html>
